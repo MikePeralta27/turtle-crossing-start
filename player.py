@@ -5,21 +5,21 @@ FINISH_LINE_Y = 280
 
 
 class Player(Turtle):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.shape("turtle")
         self.penup()
         self.go_to_start()
         self.setheading(90)
 
-    def move(self):
+    def move(self) -> None:
         new_ycor = self.ycor() + MOVE_DISTANCE
         self.goto(self.xcor(), new_ycor)
 
-    def go_to_start(self):
+    def go_to_start(self) -> None:
         self.goto(STARTING_POSITION)
 
-    def is_at_the_finish_line(self):
+    def is_at_the_finish_line(self) -> None:
         if self.ycor() > FINISH_LINE_Y:
             return True
         else:
